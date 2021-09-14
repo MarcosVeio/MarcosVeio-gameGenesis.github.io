@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    background-color: rgb(236, 236, 236)
+}
+
+.main-game{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background: rgba(0, 0, 0, 0.486);
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
+
+.window{
+    width: 20vw;
+    height: 30vh;
+    background: rgba(255, 255, 255, 0.938);
+    border-radius: 10px;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.37);
+    text-align: center;
+}
+
+.loser{
+    background: #ff2323eb;
+}
+
+.window button{
+    border: 0;
+    padding: 10px;
+    background-color: rgb(59, 245, 35);
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.window button:hover{
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.37);
+}
+
+.genius {
+    display: grid;
+    grid-template-areas: 'green red' 'yellow blue';
+    grid-gap: 10px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 100%;
+    width: 700px;
+    height: 700px;
+}
+
+.blue{
+    grid-area: blue;
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+}
+.yellow{
+    grid-area: yellow;
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+}
+.red{
+    grid-area: red;
+    background-color: red;
+    border-top-right-radius: 100%;
+}
+.green{
+    grid-area: green;
+    background-color: green;
+    border-top-left-radius: 100%;
+}
+
+.blue:hover, .red:hover, .green:hover, .blue:hover, .yellow:hover{
+    transform: scale(1.02);
+}
+
+.selected{
+    opacity: 0.5;
+}
