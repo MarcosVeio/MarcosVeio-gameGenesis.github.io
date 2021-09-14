@@ -96,3 +96,24 @@ body{
 .selected{
     opacity: 0.5;
 }
+
+@media (max-width: 800px) {
+    .genius {
+        max-width: 100%;
+        max-height: 60%;
+    }
+
+    .window{
+        padding: 70px;
+        width: 45vw;
+    }
+
+    .window h1{
+        font-size: 20px;
+    }
+
+    .window button{
+        font-size: 15px;
+    }
+    
+}
