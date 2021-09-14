@@ -18,6 +18,8 @@ const blue = document.querySelector('.blue')
 const red = document.querySelector('.red')
 const green = document.querySelector('.green')
 const yellow = document.querySelector('.yellow')
+const comoJogar = document.getElementById('comoJogar')
+const backComoJogar = document.getElementById('comoJogarBack')
 
 let shuffleOrder = () => {
 
@@ -166,4 +168,13 @@ playGame();
 function counter() {
     iCounter--
     document.getElementById('scoreMax').innerHTML = iCounter
+}
+
+comoJogar.onclick = () => {
+    document.querySelector('.window').style.display = 'none'
+    document.querySelector('.comoJogar').style.display = 'flex'
+}
+comoJogarBack.onclick = () => {
+    document.querySelector('.window').style.display = 'flex'
+    document.querySelector('.comoJogar').style.display = 'none'
 }
