@@ -50,6 +50,7 @@ let lightColor = (element, number) => {
 }
 
 let activeModal = () => {
+    document.querySelector('.window').classList.remove('loser');
     document.getElementById('modal').style.display = 'flex';
     document.getElementById('score').innerHTML = `Score: ${score}`
     document.getElementById('scoreMax').innerHTML = `Score Máximo: ${localStorage.getItem('scoreStorege')}`
@@ -101,7 +102,6 @@ let nextLevel = () => {
 }
 
 let loser = () => {
-    document.getElementById('modal').style.color = 'white';
     document.getElementById('modal').style.display = 'flex';
     document.querySelector('.window').classList.add('loser');
     document.getElementById('score').innerHTML = `GAME OVER!`;
@@ -139,13 +139,12 @@ let welcome = () => {
 
 
 let playGame = () => {
-    document.getElementById('modal').style.color = 'black';
     document.querySelector('.window').classList.remove('loser');
     welcome();
     score = 0;
 
     document.getElementById('next').onclick = () => {
-        comoJogar.style.display= "none";
+        comoJogar.style.display= 'none';
         umclick++;
         if (umclick <= 1) {
             document.getElementById('score').innerHTML = "O jogo vai começar em:"
