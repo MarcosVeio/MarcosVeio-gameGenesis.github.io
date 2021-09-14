@@ -149,8 +149,8 @@ let playGame = () => {
         if (umclick <= 1) {
             document.getElementById('score').innerHTML = "O jogo vai começar em:"
             let contagem = setInterval(() => counter(), 700)
-            setTimeout(() => clearInterval(contagem), 3500)
-            setTimeout(() => document.getElementById('modal').style.display = 'none', 3600)
+            setTimeout(() => clearInterval(contagem), 3300)
+            setTimeout(() => document.getElementById('modal').style.display = 'none', 3400)
             setTimeout(() => shuffleOrder(), 3900)
             score++;
         }
