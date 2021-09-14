@@ -67,7 +67,6 @@ let checkOrder = () => {
             activeModal()
             document.getElementById('next').onclick = () => nextLevel();
 
-            console.log(clickedOrder)
         }
     }
 }
