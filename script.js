@@ -145,6 +145,7 @@ let playGame = () => {
     score = 0;
 
     document.getElementById('next').onclick = () => {
+        comoJogar.style.display= "none";
         umclick++;
         if (umclick <= 1) {
             document.getElementById('score').innerHTML = "O jogo vai começar em:"
