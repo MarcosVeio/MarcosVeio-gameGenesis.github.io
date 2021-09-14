@@ -116,4 +116,9 @@ body{
         font-size: 15px;
     }
     
+    .window.comoJogar h1,p{
+        font-size: 2vh;
+        height: 45vw;
+    }
+    
 }
