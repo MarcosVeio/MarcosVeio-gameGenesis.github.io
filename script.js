@@ -1,6 +1,8 @@
 let order = []
 let clickedOrder = []
 let scoreOfApp = 0
+let iCounter = 4
+let umclick = 0
 
 window.addEventListener('load', () => {
     let score = scoreOfApp
@@ -97,6 +99,7 @@ let nextLevel = () => {
 }
 
 let loser = () => {
+    document.getElementById('modal').style.color = 'white';
     document.getElementById('modal').style.display = 'flex';
     document.querySelector('.window').classList.add('loser');
     document.getElementById('score').innerHTML = `GAME OVER!`;
@@ -109,23 +112,48 @@ let gameOver = () => {
     loser();
     order = [];
     clickedOrder = [];
+    umclick = 0
 
-    document.getElementById('next').onclick = () => playGame();
-
+    document.getElementById('next').onclick = () => {
+        umclick++;
+        if (umclick <= 1) {
+            iCounter = 4
+            score = 0;
+            document.getElementById('score').innerHTML = "O jogo vai começar em:"
+            let contagem = setInterval(() => counter(), 700)
+            setTimeout(() => clearInterval(contagem), 3500)
+            setTimeout(() => document.getElementById('modal').style.display = 'none', 3600)
+            setTimeout(() => shuffleOrder(), 3900)
+            score++;
+        }
+    }
 }
 
 let welcome = () => {
     document.getElementById('modal').style.display = 'flex';
     document.getElementById('score').innerHTML = `Bem vindo ao Gênesis!`
-    document.getElementById('check').innerHTML = `Iniciando novo jogo`
+    document.getElementById('check').innerHTML = `Iniciar novo jogo`
 }
 
+
 let playGame = () => {
+    document.getElementById('modal').style.color = 'black';
     document.querySelector('.window').classList.remove('loser');
     welcome();
     score = 0;
 
-    document.getElementById('next').onclick = () => nextLevel();
+    document.getElementById('next').onclick = () => {
+        umclick++;
+        if (umclick <= 1) {
+            document.getElementById('score').innerHTML = "O jogo vai começar em:"
+            let contagem = setInterval(() => counter(), 700)
+            setTimeout(() => clearInterval(contagem), 3500)
+            setTimeout(() => document.getElementById('modal').style.display = 'none', 3600)
+            setTimeout(() => shuffleOrder(), 3900)
+            score++;
+        }
+
+    }
 }
 
 green.onclick = () => click(0);
@@ -135,8 +163,7 @@ blue.onclick = () => click(3);
 
 playGame();
 
-
-
-
-
-
+function counter() {
+    iCounter--
+    document.getElementById('scoreMax').innerHTML = iCounter
+}
