@@ -203,10 +203,12 @@ function counter() {
 }
 
 comoJogar.onclick = () => {
+    document.querySelector('.comoJogar').style.opacity = '1'
+    document.querySelector('.comoJogar').style.zIndex = '1'
     document.querySelector('.window').style.display = 'none'
-    document.querySelector('.comoJogar').style.display = 'flex'
 }
 comoJogarBack.onclick = () => {
     document.querySelector('.window').style.display = 'flex'
-    document.querySelector('.comoJogar').style.display = 'none'
+    document.querySelector('.comoJogar').style.opacity = '0'
+    document.querySelector('.comoJogar').style.zIndex = '-1'
 }
