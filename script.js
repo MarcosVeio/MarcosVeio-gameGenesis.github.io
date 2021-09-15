@@ -51,6 +51,7 @@ let lightColor = (element, number) => {
 }
 
 let activeModal = () => {
+    nextButton.style.display="block"
     document.querySelector('.window').classList.remove('loser');
     document.getElementById('modal').style.display = 'flex';
     document.getElementById('score').innerHTML = `Score: ${score}`
