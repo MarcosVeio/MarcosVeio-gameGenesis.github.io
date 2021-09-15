@@ -18,6 +18,7 @@ const blue = document.querySelector('.blue')
 const red = document.querySelector('.red')
 const green = document.querySelector('.green')
 const yellow = document.querySelector('.yellow')
+const nextButton = document.getElementById('next')
 const comoJogar = document.getElementById('comoJogar')
 const backComoJogar = document.getElementById('comoJogarBack')
 
@@ -109,6 +110,7 @@ let loser = () => {
 }
 
 let gameOver = () => {
+    nextButton.style.display="block"
     score = score - 1;
     loser();
     order = [];
@@ -116,6 +118,7 @@ let gameOver = () => {
     umclick = 0
 
     document.getElementById('next').onclick = () => {
+        nextButton.style.display="none"
         umclick++;
         if (umclick <= 1) {
             iCounter = 4
@@ -146,6 +149,8 @@ let playGame = () => {
         comoJogar.style.display= 'none';
         umclick++;
         if (umclick <= 1) {
+            nextButton.style.display="none"
+            document.getElementById('check').innerHTML = ``
             document.getElementById('score').innerHTML = "O jogo vai começar em:"
             let contagem = setInterval(() => counter(), 700)
             setTimeout(() => clearInterval(contagem), 3300)
