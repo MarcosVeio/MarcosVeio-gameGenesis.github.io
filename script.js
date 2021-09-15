@@ -41,13 +41,40 @@ let shuffleOrder = () => {
 
 let lightColor = (element, number) => {
     number = number * 500;
-    setTimeout(() => {
-        element.classList.add('selected');
-    }, number - 150);
 
-    setTimeout(() => {
-        element.classList.remove('selected');
-    }, number - 20);
+    if(element == blue){
+        setTimeout(() => {
+            element.classList.add('selected-blue');
+        }, number - 150);
+
+        setTimeout(() => {
+            element.classList.remove('selected-blue');
+        }, number - 20);
+    }else if(element == red){
+        setTimeout(() => {
+            element.classList.add('selected-red');
+        }, number - 150);
+
+        setTimeout(() => {
+            element.classList.remove('selected-red');
+        }, number - 20);
+    }else if(element == green){
+        setTimeout(() => {
+            element.classList.add('selected-green');
+        }, number - 150);
+
+        setTimeout(() => {
+            element.classList.remove('selected-green');
+        }, number - 20);
+    }else if(element == yellow){
+        setTimeout(() => {
+            element.classList.add('selected-yellow');
+        }, number - 150);
+
+        setTimeout(() => {
+            element.classList.remove('selected-yellow');
+        }, number - 20);
+    }
 }
 
 let activeModal = () => {
