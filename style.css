@@ -34,7 +34,17 @@ body{
 
 .comoJogar{
     height: 60vh;
-    display: none;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.2s;
+}
+
+.comoJogar .active{
+    height: 60vh;
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
 }
 
 .loser{
